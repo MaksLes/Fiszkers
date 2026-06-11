@@ -1,0 +1,276 @@
+/* ---------------------------
+   FISZKERS – BASE THEME
+----------------------------*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.25);
+    --text-light: #ffffff;
+    --primary: #4a6cf7;
+}
+
+/* ── Baza ── */
+body {
+    background: linear-gradient(135deg, #0e0e14, #1a1a24, #0c0c10);
+    min-height: 100vh;
+    color: var(--text-light);
+    font-family: "Inter", sans-serif;
+    padding-bottom: 80px;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+/* ── Dekoracyjne tło (używane na każdej stronie) ── */
+.bg-spot {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    filter: blur(140px);
+    opacity: 0.55;
+    z-index: -1;
+}
+
+.bg-spot-1 {
+    background: rgba(255, 0, 140, 0.4);
+    top: 0;
+    left: 0;
+}
+
+.bg-spot-2 {
+    background: rgba(0, 140, 255, 0.35);
+    bottom: 0;
+    right: 0;
+}
+
+/* ── Formularze – globalny dark override ──
+   Dotyczy stron jeszcze nieprzerojektowanych (lesson, hidden_word itd.)
+   Na nowych stronach inline <style> nadpisuje te reguły. ── */
+.form-control {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: white !important;
+    border-radius: 12px !important;
+}
+
+.form-control:focus {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border-color: #6a87ff !important;
+    box-shadow: 0 0 10px rgba(100, 120, 255, 0.3);
+}
+
+/* ── Tabele – globalny dark override ── */
+.table {
+    color: white;
+}
+
+.table th {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.table td {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* ── Przyciski akcji (używane w adminie i innych stronach) ── */
+.btn-warning.btn-sm {
+    background: #ffcb42;
+    border: none;
+    color: #000;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+.btn-warning.btn-sm:hover {
+    background: #ffe08b;
+    transform: translateY(-2px);
+}
+
+.btn-danger.btn-sm {
+    background: #ff3b3b;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+.btn-danger.btn-sm:hover {
+    background: #ff6060;
+    transform: translateY(-2px);
+}
+
+.btn-info.btn-sm {
+    background: #4aa3ff;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+.btn-info.btn-sm:hover {
+    background: #78bdff;
+    transform: translateY(-2px);
+}
+
+/* ── Animacja (używana przez .lesson-card) ── */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Karta lekcji – lesson.php (jeszcze nieprzerojektowany) ── */
+.lesson-card {
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(14px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    padding: 30px;
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    animation: fadeIn 0.4s ease;
+}
+
+.lesson-card .card-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.lesson-card input[type="text"] {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    color: #fff !important;
+    border-radius: 12px;
+    padding: 12px 14px;
+    transition: 0.25s ease;
+}
+
+.lesson-card input[type="text"]:focus {
+    background: rgba(255, 255, 255, 0.14) !important;
+    border-color: rgba(255, 255, 255, 0.35) !important;
+    box-shadow: 0 0 12px rgba(120, 140, 255, 0.35);
+}
+
+.lesson-card .btn-primary {
+    background: linear-gradient(135deg, #4a6cf7, #6a87ff);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: 0.25s ease;
+}
+
+.lesson-card .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(90, 110, 255, 0.45);
+}
+
+.lesson-card .btn-secondary {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 10px 22px;
+    border-radius: 12px;
+    color: #fff;
+    transition: 0.25s ease;
+}
+
+.lesson-card .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.22);
+}
+
+/* ── Panel admina – admin/ (jeszcze nieprzerojektowany) ── */
+.admin-container {
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    color: #fff;
+}
+
+.admin-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+.admin-title::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.35);
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.45);
+}
+
+.admin-table thead th {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-weight: 600;
+    padding: 14px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+.admin-table tbody tr {
+    background: rgba(255, 255, 255, 0.06);
+    transition: 0.25s ease;
+}
+
+.admin-table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: scale(1.005);
+}
+
+.admin-table td {
+    padding: 12px 14px;
+    color: #f1f1f1;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ── Minigra – hidden_word.php (jeszcze nieprzerojektowany) ── */
+.play-again {
+    margin-top: 20px;
+    padding: 12px 28px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.play-again:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+}
