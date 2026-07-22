@@ -1,54 +1,120 @@
 # Aplikacja "Fiszkers"
 
-Opis projektu:
+## Opis projektu
 
 "Fiszkers" – Twoja osobista maszyna do nauki!
-Zamień naukę w przygodę z Fiszkers – nowoczesną aplikacją do tworzenia, przeglądania i utrwalania wiedzy za pomocą fiszek. Twórz własne zestawy lub korzystaj z gotowych. Dzięki funkcji Lekcji, czyli krótkim testom, sprawdzisz swoją pamięć i umiejętności w zaledwie kilka minut, natomiast dzięki mini-grze "Ukryte słowo" możesz utrwalić swoją wiedzę, którą już nabyłeś/aś. Każda lekcja to 10 wybranych przez system fiszek, które pomogą Ci skutecznie powtórzyć materiał i śledzić postępy. Gdy wybierasz jednak naukę poprzez grę w wisielca, możesz popełnić tylko 10 błędów w innym wypadku słowo zostanie zresetowane i zmienione na inne.
-Prosto, szybko, skutecznie – ucz się kiedy chcesz i jak chcesz. Z Fiszkers nauka staje się częścią Twojego dnia, a nie obowiązkiem.
+
+Zamień naukę w przygodę z Fiszkers – nowoczesną aplikacją do tworzenia,
+przeglądania i utrwalania wiedzy za pomocą fiszek. Twórz własne zestawy
+lub korzystaj z gotowych fiszek globalnych. Dzięki funkcji Lekcji, czyli
+krótkim quizom z 10 pytaniami, sprawdzisz swoją pamięć i umiejętności
+w zaledwie kilka minut. Minigrę "Ukryte słowo" (wisielec) możesz
+wykorzystać do utrwalenia już nabytej wiedzy – masz maksymalnie 10 prób,
+zanim słowo zostanie zmienione na nowe.
+
+Śledź swoje postępy dzięki statystykom, wykresem i systemowi osiągnięć,
+który nagradza regularną naukę i dobre wyniki. Utrzymuj streak aktywności
+i odblokowuj kolejne odznaki.
+
+Prosto, szybko, skutecznie – ucz się kiedy chcesz i jak chcesz.
+Z Fiszkers nauka staje się częścią Twojego dnia, a nie obowiązkiem.
+
+---
+
+## Funkcjonalności
+
+- Tworzenie i zarządzanie własnym zestawem fiszek (pary PL↔EN)
+- Lekcje: quiz z 10 losowych fiszek z natychmiastową informacją zwrotną
+- Historia lekcji z podglądem każdej odpowiedzi
+- Minigrę "Ukryte słowo" (wisielec) – odgadywanie angielskich słów
+- System osiągnięć nagradzający postępy i regularność nauki
+- Licznik streak – dni ciągłej aktywności
+- Wykresy postępów na stronie głównej (Chart.js)
+- Panel administratora: zarządzanie użytkownikami i fiszkami
+- Aktywacja konta przez e-mail
+
+---
 
 ## Wymagania systemowe
 
-- wersja apache'a - 2.4.58 (Win64)
-- wersja PHP'a - 8.2.12
-- wersja MySQL - 10.4.32 MariaDB
+- Apache 2.4.58 (Win64)
+- PHP 8.2.12
+- MySQL 10.4.32 MariaDB
+- Dowolna nowoczesna przeglądarka (Chrome 100+, Firefox 100+, Edge 100+)
+
+---
 
 ## Instalacja
 
-Krok 1 -Pobranie i instalacja XAMPP
-Pobierz pakiet XAMPP w wersji 8.2.x ze strony https://www.apachefriends.org i zainstaluj go w domyślnej lokalizacji (C:\xampp). Podczas instalacji upewnij się, że zaznaczone są co najmniej komponenty: Apache, MySQL i PHP.
+**Krok 1 – Pobranie i instalacja XAMPP**
 
-Krok 2 -Umieszczenie plików aplikacji
-Skopiuj lub wypakuj folder z aplikacją Fiszkers do katalogu C:\xampp\htdocs\Fiszkers\ (nazwa folderu musi być dokładnie taka -"Fiszkers" z wielką literą -ponieważ adresy URL są wrażliwe na wielkość liter).
+Pobierz pakiet XAMPP w wersji 8.2.x ze strony https://www.apachefriends.org
+i zainstaluj go w domyślnej lokalizacji (`C:\xampp`). Podczas instalacji
+upewnij się, że zaznaczone są komponenty: Apache, MySQL i PHP.
 
-Krok 3 -Uruchomienie serwera
-Otwórz XAMPP Control Panel (skrót na pulpicie lub C:\xampp\xampp-control.exe). Kliknij przycisk Start przy Apache, a następnie Start przy MySQL. Obie usługi powinny zaświecić się na zielono ze statusem "Running".
+**Krok 2 – Umieszczenie plików aplikacji**
 
-Krok 4 -Uruchomienie instalatora
-Otwórz przeglądarkę internetową i wpisz w pasku adresu:
-http://localhost/Fiszkers/install.php
-Wyświetli się strona instalatora z formularzem konfiguracyjnym.
+Skopiuj folder z aplikacją do katalogu `C:\xampp\htdocs\`
+(nazwa folderu musi być dokładnie taka: Fiszkers - wielkość liter ma znaczenie).
 
-Krok 5 -Wypełnienie formularza instalatora
-Na stronie instalatora uzupełnij następujące pola:
-• Host bazy danych: localhost (domyślna wartość -pozostaw bez zmian).
-• Nazwa bazy danych: fiszkers (zostanie utworzona automatycznie).
-• Użytkownik bazy danych: root (domyślny użytkownik XAMPP bez hasła).
-• Hasło: pozostaw puste (domyślna konfiguracja XAMPP).
-• Email administratora: podaj adres e-mail konta administratora (np. admin@admin.com).
-• Hasło administratora: ustal silne hasło dla konta administracyjnego.
+**Krok 3 – Uruchomienie serwera**
 
-Krok 6 -Zakończenie instalacji
-Kliknij przycisk Zainstaluj aplikację. Instalator automatycznie: utworzy bazę danych fiszkers, wygeneruje wszystkie tabele, doda konto administratora, wczyta 20 przykładowych fiszek globalnych oraz zapisze plik includes/config.php z danymi połączenia. Po zakończeniu zostaniesz przekierowany na stronę logowania.
+Otwórz XAMPP Control Panel i kliknij **Start** przy Apache i MySQL.
+Obie usługi powinny mieć status "Running" (zielone podświetlenie).
 
-Krok 7 -Pierwsze logowanie
-Zaloguj się na stronie http://localhost/Fiszkers/login.php używając podanego w instalatorze adresu e-mail i hasła administratora. Aplikacja jest gotowa do użycia.
+**Krok 4 – Uruchomienie instalatora**
 
-UWAGA: Plik install.php można uruchomić tylko jeden raz. Jeśli plik includes/config.php istnieje i nie jest pusty, instalator wyświetli komunikat o zakończonej instalacji. Aby zainstalować ponownie (np. przy testach), należy ręcznie usunąć plik includes/config.php.
-UWAGA: Aplikacja wymaga konfiguracji serwera SMTP do wysyłania e-maili aktywacyjnych.
+Otwórz przeglądarkę i wpisz: http://localhost/Fiszkers/install.php
+**Krok 5 – Wypełnienie formularza instalatora**
 
-W środowisku lokalnym XAMPP funkcja ta może nie działać bez dodatkowej konfiguracji sendmail.
-[ZALECANE] - W takim przypadku administrator może ręcznie aktywować konta użytkowników w panelu administracyjnym poprzez ustawienie flagi is_active = 1 bezpośrednio przez phpMyAdmin.
-[ZALECANE] - Zalecane jest również włączenie akceleracji grafiki w przeglądarce internetowej. W przypadku Google Chrome: USTAWIENIA -> SYSTEM -> „Używaj akceleracji grafiki, gdy jest dostępna” - WŁĄCZ. Zapewni to komfort podczas korzystania z aplikacji.
+| Pole                   | Wartość                |
+| ---------------------- | ---------------------- |
+| Host bazy danych       | `localhost`            |
+| Nazwa bazy danych      | `fiszkers`             |
+| Użytkownik bazy danych | `root`                 |
+| Hasło bazy danych      | _(pozostaw puste)_     |
+| Email administratora   | np. `admin@admin.com`  |
+| Hasło administratora   | dowolne, min. 8 znaków |
+
+**Krok 6 – Zakończenie instalacji**
+
+Kliknij **Zainstaluj Fiszkers**. Instalator automatycznie:
+
+- utworzy bazę danych i 7 tabel
+- doda konto administratora
+- wczyta 30 startowych fiszek globalnych
+- doda 11 osiągnięć do systemu
+- zapisze plik `includes/config.php`
+
+Po zakończeniu zostaniesz przekierowany na stronę logowania.
+
+**Krok 7 – Pierwsze logowanie**
+
+Zaloguj się na `http://localhost/Fiszkers/login.php` używając danych
+podanych w instalatorze.
+
+---
+
+## Uwagi
+
+> **UWAGA:** Plik `install.php` można uruchomić tylko raz. Jeśli plik
+> `includes/config.php` istnieje i nie jest pusty, instalator wyświetli
+> komunikat o zakończonej instalacji. Aby zainstalować ponownie, usuń
+> plik `includes/config.php`.
+
+> **UWAGA:** Plik `includes/config.php` nie jest częścią repozytorium — jest
+> generowany automatycznie przez `install.php` podczas instalacji. Jeśli
+> zobaczysz komunikat "Aplikacja nie jest jeszcze skonfigurowana", oznacza to,
+> że instalator nie został jeszcze uruchomiony.
+
+> **UWAGA:** Aplikacja wymaga konfiguracji SMTP do wysyłania e-maili
+> aktywacyjnych. W środowisku lokalnym XAMPP funkcja ta może nie działać.
+
+> **Zalecane:** administrator może ręcznie aktywować konta w panelu
+> administracyjnym (zakładka edycji użytkownika → przełącznik "Konto aktywne").
+
+> **ZALECANE:** Włącz akcelerację grafiki w przeglądarce.
+> Chrome: Ustawienia → System → _"Używaj akceleracji grafiki, gdy jest dostępna"_ → WŁĄCZ.
 
 ## Autor
 
@@ -57,6 +123,12 @@ W środowisku lokalnym XAMPP funkcja ta może nie działać bez dodatkowej konfi
 
 ## Wykorzystane zewnętrzne biblioteki
 
-- bootstrap (5.3.0)
-- Chart.js (wykresy postępów)
-- Font Awesome (ikony)
+|------------------------------------------------------------|
+| Biblioteka | Wersja | Zastosowanie |
+| -----------------------------------------------------------|
+| Bootstrap | 5.3.0 | Framework CSS, komponenty UI |
+| -----------------------------------------------------------|
+| Tabler Icons | latest | Ikony interfejsu |
+| -----------------------------------------------------------|
+| Chart.js | latest | Wykresy postępów na dashboardzie |
+|------------------------------------------------------------|
